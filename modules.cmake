@@ -178,7 +178,7 @@ function(add_module_library name)
         OUTPUT ${pcm}
         COMMAND ${CMAKE_CXX_COMPILER}
                 -std=c++${std} -x c++-module --precompile -c
-                -o ${pcm} ${CMAKE_CURRENT_SOURCE_DIR}/${src}
+                -o ${pcm} ${src}
                 $<TARGET_PROPERTY:${name},COMPILE_OPTIONS>
                 "$<$<BOOL:${prop}>:-I$<JOIN:${prop},;-I>>"
         # Required by the -I generator expression above.
